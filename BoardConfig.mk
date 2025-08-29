@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/8849/TANK2
+DEVICE_PATH := device/unihertz/TANK2
 
 # Inherit from mt6789-common
 include device/transsion/mt6789-common/BoardConfigCommon.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := 8849-TANK2
+TARGET_OTA_ASSERT_DEVICE := unihertz-TANK2
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_TANK2
