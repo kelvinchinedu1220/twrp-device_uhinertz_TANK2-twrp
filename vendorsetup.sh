@@ -48,13 +48,27 @@ export LC_ALL="C"
 # Clone to fix build on minimal manifest
 git clone https://android.googlesource.com/platform/external/gflags/ -b android-12.1.0_r4 external/gflags
 
-# Patches
+TFILE=$PWD/out/hapticspath.patched
+[ ! -d "out" ]&& mkdir -p out
 RET=0
+REVERSE=0
+
 cd bootable/recovery
-git apply ../../device/transsion/mt6789-common/patches/0001-Change-haptics-activation-file-path.patch > /dev/null 2>&1 || RET=$?
+git apply --reverse --check ../../device/unihertz/TANK2/patches/0001-Change-haptics-activation-file-path.patch || REVERSE=$?
 cd ../../
-if [ $RET -ne 0 ];then
-    echo "ERROR: Patch is not applied! Maybe it's already patched?"
+
+if [ -f "$TFILE" ];then
+    echo "haptics path patched already, skipping"
+elif [ $REVERSE -eq 0 ]; then
+    echo "$TFILE is not found but git is able to reverse haptics path patch, assuming it's already patched, skipping"
 else
-    echo "OK: All patched"
+    cd bootable/recovery
+    git apply ../../device/unihertz/TANK2/patches/0001-Change-haptics-activation-file-path.patch || RET=$?
+    cd ../../
+    if [ $RET -ne 0 ];then
+        echo "ERROR: minuitwrp/events.cpp could not be patched! Vibration in TWRP will not work."
+    else
+        echo "OK: minuitwrp/events.cpp patched"
+        touch $TFILE
+    fi
 fi
