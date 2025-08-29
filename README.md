@@ -37,5 +37,5 @@ Works:
 _Lunch_ command :
 
 ```
-lunch twrp_LI7-eng && mka adbd vendorbootimage
+lunch twrp_TANK2-eng && mka adbd vendorbootimage
 ```
