@@ -19,7 +19,7 @@
 #
 
 #set -o xtrace
-FDEVICE="LI7"
+FDEVICE="TANK2"
 
 # Shell compatibility detection
 if [ -n "$ZSH_VERSION" ]; then
@@ -90,7 +90,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# Patches
 	RET=0
 	cd bootable/recovery
-	git apply ../../device/tecno/TECNO-LI7/patches/0001-Change-haptics-activation-file-path.patch > /dev/null 2>&1 || RET=$?
+	git apply ../../device/8849/TANK2/patches/0001-Change-haptics-activation-file-path.patch > /dev/null 2>&1 || RET=$?
 	cd ../../
 	if [ $RET -ne 0 ]; then
 		echo "ERROR: Patch is not applied! Maybe it's already patched?"
@@ -156,8 +156,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_ENABLE_ALL_PARTITION_TOOLS=1
 
 	# variant
-	export OF_MAINTAINER="rama982"
-	#export FOX_VARIANT="R11.2-A12_ramabondanp"
+	export OF_MAINTAINER="NINO"
 
 	# no flashlight
 	export OF_FLASHLIGHT_ENABLE=0
