@@ -5,7 +5,7 @@
 #
 
 # Inherit from TANK2 device
-$(call inherit-product, device/8849/TANK2/device.mk)
+$(call inherit-product, device/unihertz/TANK2/device.mk)
 
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
