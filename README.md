@@ -1,9 +1,9 @@
-## TECNO POVA 6 4G (_LI7_)
+## unihertz tank2 4G (_LI7_)
 ## TWRP / OrangeFox device tree
 
 ## Device specifications
 
-Device                  | TECNO POVA 6 4G
+Device                  | unihertz 4G
 -----------------------:|:-----------------------------------------
 SoC                     | Mediatek Helio G99 Ultimate (6 nm)
 CPU                     | Octa-core (2x2.2 GHz Cortex-A76 & 6x2.0 GHz Cortex-A55)
@@ -17,8 +17,6 @@ Display                 | 1080 x 2460 pixels (~396 ppi density), 6.78 inches
 Camera                  | 108 MP (wide); 32 MP (front, wide)
 
 ## Device picture
-
-![ TECNO POVA 6 4G ](https://fdn2.gsmarena.com/vv/pics/tecno/tecno-pova-6-01.jpg "TECNO POVA 6 4G")
 
 ## Features
 
